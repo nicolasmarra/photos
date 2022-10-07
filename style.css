@@ -56,6 +56,12 @@ main ul {
 main ul li img {
   width: 180px;
   height: 130px;
+  cursor: pointer;
+  transition: 500ms;
+}
+
+main ul li img:hover {
+  transform: scale(1.1);
 }
 
 footer {
