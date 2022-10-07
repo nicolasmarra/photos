@@ -64,6 +64,34 @@ main ul li img:hover {
   transform: scale(1.1);
 }
 
+.full-img {
+  width: 100%;
+  height: 100vh;
+  background-color: #000000;
+  top: 0;
+  left: 0;
+  position: fixed;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+}
+
+.full-img img {
+  width: 90%;
+  max-width: 400px;
+}
+
+.full-img span {
+  position: absolute;
+  top: 8%;
+  right: 10%;
+  font-family: 'Inter';
+  font-size: 35px;
+  color: #fff;
+  cursor: pointer;
+}
+
 footer {
   font-family: 'Inter';
   font-style: normal;

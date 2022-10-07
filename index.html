@@ -15,27 +15,31 @@
   </head>
   <body>
     <div class="container">
+      <div class="full-img" id="full_img_box">
+        <img src="./assets/home/Vendeur.JPG" id="full_img" alt="Full image" />
+        <span onclick="CloseImgBox()">X</span>
+      </div>
       <header>
         <h2>Nicolas Marra</h2>
         <img src="./assets/menu.png" alt="menu_open" />
       </header>
 
       <main>
-        <nav>
-          
-        </nav>
+        <nav></nav>
 
         <ul>
           <li>
             <img
               src="./assets/home/Vendeur.JPG"
               alt="Feira do Rélogio - Lisboa 2022"
+              onclick="OpenFullImg(this.src)"
             />
           </li>
           <li>
             <img
               src="./assets/home/Fille.JPG"
               alt="Feira do Rélogio - Lisboa 2022"
+              onclick="OpenFullImg(this.src)"
             />
           </li>
         </ul>
@@ -43,29 +47,16 @@
         <ul>
           <li>
             <img
-              src="./assets/home/Vendeur.JPG"
-              alt="Feira do Rélogio - Lisboa 2022"
+              src="./assets/home/Metz.JPG"
+              alt="Metz 2022"
+              onclick="OpenFullImg(this.src)"
             />
           </li>
           <li>
             <img
-              src="./assets/home/Fille.JPG"
-              alt="Feira do Rélogio - Lisboa 2022"
-            />
-          </li>
-        </ul>
-
-        <ul>
-          <li>
-            <img
-              src="./assets/home/Vendeur.JPG"
-              alt="Feira do Rélogio - Lisboa 2022"
-            />
-          </li>
-          <li>
-            <img
-              src="./assets/home/Fille.JPG"
-              alt="Feira do Rélogio - Lisboa 2022"
+              src="./assets/home/Gare_Metz.JPG"
+              alt="Gare de Metz - Metz 2022"
+              onclick="OpenFullImg(this.src)"
             />
           </li>
         </ul>
@@ -73,14 +64,16 @@
         <ul>
           <li>
             <img
-              src="./assets/home/Vendeur.JPG"
-              alt="Feira do Rélogio - Lisboa 2022"
+              src="./assets/home/winstonchurchill.JPG"
+              alt="Winston Churchil - Strasbourg 2022"
+              onclick="OpenFullImg(this.src)"
             />
           </li>
           <li>
             <img
-              src="./assets/home/Fille.JPG"
-              alt="Feira do Rélogio - Lisboa 2022"
+              src="./assets/home/Paris.JPG"
+              alt="Paris 2022"
+              onclick="OpenFullImg(this.src)"
             />
           </li>
         </ul>
@@ -88,14 +81,33 @@
         <ul>
           <li>
             <img
-              src="./assets/home/Vendeur.JPG"
-              alt="Feira do Rélogio - Lisboa 2022"
+              src="./assets/home/Avenida.JPG"
+              alt="Avenida da Liberdade - Lisboa 2022"
+              onclick="OpenFullImg(this.src)"
             />
           </li>
           <li>
             <img
-              src="./assets/home/Fille.JPG"
-              alt="Feira do Rélogio - Lisboa 2022"
+              src="./assets/home/Lisboa.JPG"
+              alt="Lisboa 2022"
+              onclick="OpenFullImg(this.src)"
+            />
+          </li>
+        </ul>
+
+        <ul>
+          <li>
+            <img
+              src="./assets/home/rue.JPG"
+              alt="Rue  - Strasbourg 2022"
+              onclick="OpenFullImg(this.src)"
+            />
+          </li>
+          <li>
+            <img
+              src="./assets/home/couple.JPG"
+              alt="Couple amoureux - Strasbourg 2022"
+              onclick="OpenFullImg(this.src)"
             />
           </li>
         </ul>
@@ -105,5 +117,6 @@
         <p>Copyright © all rights reserved</p>
       </footer>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
