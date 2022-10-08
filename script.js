@@ -1,5 +1,6 @@
 const fullImgBox = document.getElementById('full_img_box')
 const fullImg = document.getElementById('full_img')
+const span = document.getElementById('description')
 
 const footer = document.getElementById('footer')
 const main = document.getElementById('photos')
@@ -10,9 +11,10 @@ function CloseImgBox() {
   fullImgBox.style.display = 'none'
 }
 
-function OpenFullImg(reference) {
+function OpenFullImg(source, description) {
   fullImgBox.style.display = 'flex'
-  fullImg.src = reference
+  fullImg.src = source
+  span.innerHTML = description
 }
 
 function OnMenu() {

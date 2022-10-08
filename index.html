@@ -17,7 +17,8 @@
     <div class="container">
       <div class="full-img" id="full_img_box">
         <img src="./assets/home/Vendeur.JPG" id="full_img" alt="Full image" />
-        <span onclick="CloseImgBox()">X</span>
+        <span onclick="CloseImgBox()" id="close_button">X</span>
+        <span id="description">Feira do Relógio - Lisboa 2022</span>
       </div>
       <header>
         <a href="./index.html"><h2>Nicolas Marra</h2></a>
@@ -59,15 +60,15 @@
           <li>
             <img
               src="./assets/home/Vendeur.JPG"
-              alt="Feira do Rélogio - Lisboa 2022"
-              onclick="OpenFullImg(this.src)"
+              alt="Feira do Relógio - Lisboa 2022"
+              onclick="OpenFullImg(this.src,this.alt)"
             />
           </li>
           <li>
             <img
               src="./assets/home/Fille.JPG"
-              alt="Feira do Rélogio - Lisboa 2022"
-              onclick="OpenFullImg(this.src)"
+              alt="Feira do Relógio - Lisboa 2022"
+              onclick="OpenFullImg(this.src,this.alt)"
             />
           </li>
         </ul>
@@ -77,14 +78,14 @@
             <img
               src="./assets/home/Metz.JPG"
               alt="Metz 2022"
-              onclick="OpenFullImg(this.src)"
+              onclick="OpenFullImg(this.src,this.alt)"
             />
           </li>
           <li>
             <img
               src="./assets/home/Gare_Metz.JPG"
               alt="Gare de Metz - Metz 2022"
-              onclick="OpenFullImg(this.src)"
+              onclick="OpenFullImg(this.src,this.alt)"
             />
           </li>
         </ul>
@@ -94,14 +95,14 @@
             <img
               src="./assets/home/winstonchurchill.JPG"
               alt="Winston Churchil - Strasbourg 2022"
-              onclick="OpenFullImg(this.src)"
+              onclick="OpenFullImg(this.src,this.alt)"
             />
           </li>
           <li>
             <img
               src="./assets/home/Paris.JPG"
               alt="Paris 2022"
-              onclick="OpenFullImg(this.src)"
+              onclick="OpenFullImg(this.src,this.alt)"
             />
           </li>
         </ul>
@@ -111,14 +112,14 @@
             <img
               src="./assets/home/Avenida.JPG"
               alt="Avenida da Liberdade - Lisboa 2022"
-              onclick="OpenFullImg(this.src)"
+              onclick="OpenFullImg(this.src,this.alt)"
             />
           </li>
           <li>
             <img
               src="./assets/home/Lisboa.JPG"
               alt="Lisboa 2022"
-              onclick="OpenFullImg(this.src)"
+              onclick="OpenFullImg(this.src,this.alt)"
             />
           </li>
         </ul>
@@ -128,14 +129,14 @@
             <img
               src="./assets/home/rue.JPG"
               alt="Rue  - Strasbourg 2022"
-              onclick="OpenFullImg(this.src)"
+              onclick="OpenFullImg(this.src,this.alt)"
             />
           </li>
           <li>
             <img
               src="./assets/home/couple.JPG"
               alt="Couple amoureux - Strasbourg 2022"
-              onclick="OpenFullImg(this.src)"
+              onclick="OpenFullImg(this.src,this.alt)"
             />
           </li>
         </ul>
