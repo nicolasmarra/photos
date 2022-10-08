@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Nicolas Marra</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Homenaje&family=Inter:wght@300;400;500&family=Merriweather+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="full-img" id="full_img_box">
+        <img src="./assets/home/Vendeur.JPG" id="full_img" alt="Full image" />
+        <span onclick="CloseImgBox()">X</span>
+      </div>
+      <header>
+        <a href="./index.html"><h2>Nicolas Marra</h2></a>
+        <img
+          src="./assets/bx-menu.svg"
+          alt="menu_open"
+          onclick="OnMenu()"
+          id="open_menu"
+        />
+      </header>
+
+      <nav id="menu">
+        <ul class="menu">
+          <li>
+            <a href="./index.html"><h2>Accueil</h2></a>
+          </li>
+          <li>
+            <a href="./gallery.html"><h2>Photos</h2></a>
+          </li>
+          <li>
+            <a href="#" onclick="OnMenu()"><h2 class="on">Bio</h2></a>
+          </li>
+        </ul>
+        <ul class="footer">
+          <li>
+            <a href="https://instagram.com/yeux_on" target="_blank"
+              ><img src="./assets/bxl-instagram.svg" alt="insta logo"
+            /></a>
+          </li>
+          <li>
+            <a href="https://vsco.co/nicolasmarra/gallery" target="_blank"
+              ><img src="./assets/vsco.png" alt="vsco logo" id="vsco"
+            /></a>
+          </li>
+        </ul>
+      </nav>
+      <main id="photos" class="bio">
+        <img src="./assets/Nicolas.jpg" alt="Nicolas MARRA" />
+        <p>
+          Yo, je suis Nicolas MARRA. Je fais des photos, mais je ne suis pas
+          photographe! <br />
+          <br />
+          J’ai commencé en 2022 par la street photo et les paysages avec un
+          reflex numérique canon EOS 2000D. J’ai envie de découvrir la photo
+          sous d’autres formes notamment le portrait.
+        </p>
+      </main>
+      <footer id="footer">
+        <p>Copyright © all rights reserved</p>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

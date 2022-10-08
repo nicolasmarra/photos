@@ -20,13 +20,41 @@
         <span onclick="CloseImgBox()">X</span>
       </div>
       <header>
-        <h2>Nicolas Marra</h2>
-        <img src="./assets/menu.png" alt="menu_open" />
+        <a href="./index.html"><h2>Nicolas Marra</h2></a>
+        <img
+          src="./assets/bx-menu.svg"
+          alt="menu_open"
+          onclick="OnMenu()"
+          id="open_menu"
+        />
       </header>
 
-      <main>
-        <nav></nav>
-
+      <nav id="menu">
+        <ul class="menu">
+          <li>
+            <a href="#" onclick="OnMenu()"><h2 class="on">Accueil</h2></a>
+          </li>
+          <li>
+            <a href="./gallery.html"><h2>Photos</h2></a>
+          </li>
+          <li>
+            <a href="./bio.html"><h2>Bio</h2></a>
+          </li>
+        </ul>
+        <ul class="footer">
+          <li>
+            <a href="https://instagram.com/yeux_on" target="_blank"
+              ><img src="./assets/bxl-instagram.svg" alt="insta logo"
+            /></a>
+          </li>
+          <li>
+            <a href="https://vsco.co/nicolasmarra/gallery" target="_blank"
+              ><img src="./assets/vsco.png" alt="vsco logo" id="vsco"
+            /></a>
+          </li>
+        </ul>
+      </nav>
+      <main id="photos">
         <ul>
           <li>
             <img
@@ -113,7 +141,7 @@
         </ul>
       </main>
 
-      <footer>
+      <footer id="footer">
         <p>Copyright © all rights reserved</p>
       </footer>
     </div>

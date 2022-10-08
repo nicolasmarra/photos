@@ -7,7 +7,12 @@
 body {
   margin: auto;
   width: 414px;
-  height: 896px;
+  height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
 }
 
 header {
@@ -39,10 +44,87 @@ header img {
   cursor: pointer;
 }
 
-main {
-  margin-inline: 18px;
+header img.open {
+  content: url('./assets/bx-menu.svg');
 }
 
+header img.close {
+  content: url('./assets/bx-x.svg');
+}
+
+nav {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: display 0.4s, transform 0.4s;
+}
+
+nav h2.on {
+  border-bottom: 1px solid #000000;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul.menu {
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+nav ul.menu li a h2 {
+  font-family: 'Homenaje';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 35px;
+  text-align: center;
+
+  color: #000000;
+}
+
+nav ul.footer {
+  margin-top: 150px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+nav ul.footer li img#vsco {
+  width: 20px;
+  height: 20px;
+}
+
+main {
+  margin-inline: 18px;
+  transition: display 0.4s;
+}
+
+footer {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #000000;
+  padding-bottom: 25px;
+  transition: display 0.4s;
+}
+
+/* -------------- ACCUEIL -----------------------*/
 main ul {
   list-style: none;
   display: flex;
@@ -92,13 +174,20 @@ main ul li img:hover {
   cursor: pointer;
 }
 
-footer {
+/* --------------BIO -----------------------*/
+
+main.bio p {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
-  line-height: 17px;
-  text-align: center;
+  line-height: 19px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  justify-content: center;
+}
 
-  color: #000000;
+main.bio img {
+  width: 375px;
+  height: 280px;
 }
