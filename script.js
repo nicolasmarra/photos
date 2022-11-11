@@ -7,6 +7,8 @@ const main = document.getElementById('photos')
 const menu = document.getElementById('menu')
 const open_menu = document.getElementById('open_menu')
 
+
+
 function CloseImgBox() {
   fullImgBox.style.display = 'none'
 }
@@ -32,3 +34,31 @@ function OnMenu() {
     open_menu.classList.add('close')
   }
 }
+
+
+function SeeCity(nameCity,optionCity){
+  
+  ClearCity()
+
+  const city = document.getElementById(nameCity)
+  const optioncity = document.getElementById(optionCity)
+
+  city.classList.add('on')
+  optioncity.classList.add('on')
+}
+
+function ClearCity(){
+  
+  const cities = document.querySelectorAll('.city')
+
+  cities.forEach(city =>{
+    city.classList.remove('on')
+  })
+
+  const links = document.querySelectorAll('.link')
+
+  links.forEach(link =>{
+    link.classList.remove('on')
+  })
+}
+

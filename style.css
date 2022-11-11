@@ -8,11 +8,15 @@ body {
   margin: auto;
   width: 414px;
   height: 100vh;
+  overflow: hidden;
 }
 
 a {
   text-decoration: none;
   cursor: pointer;
+}
+ul {
+  list-style: none;
 }
 
 header {
@@ -122,28 +126,7 @@ footer {
   color: #000000;
   padding-bottom: 25px;
   transition: display 0.4s;
-}
-
-/* -------------- ACCUEIL -----------------------*/
-main ul {
-  list-style: none;
-  display: flex;
-  flex-direction: row;
-  gap: 15px;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 16px;
-}
-
-main ul li img {
-  width: 180px;
-  height: 130px;
-  cursor: pointer;
-  transition: 500ms;
-}
-
-main ul li img:hover {
-  transform: scale(1.1);
+  
 }
 
 .full-img {
@@ -174,11 +157,33 @@ main ul li img:hover {
 .full-img span#close_button {
   top: 5%;
   right: 5%;
-  font-size: 35px;
+  font-size: 30px;
   cursor: pointer;
 }
 
-/* --------------BIO -----------------------*/
+/* -------------- ACCUEIL -----------------------*/
+main ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+main ul li img {
+  width: 180px;
+  height: 130px;
+  cursor: pointer;
+  transition: 500ms;
+}
+
+main ul li img:hover {
+  transform: scale(1.1);
+}
+
+/* -------------- BIO ---------------------*/
 
 main.bio p {
   font-family: 'Inter';
@@ -192,6 +197,43 @@ main.bio p {
 }
 
 main.bio img {
-  width: 375px;
-  height: 280px;
+  max-width: 375px;
+  max-height: 280px;
+  border-radius: 15px;
+  margin: auto;
+  display: block;
+}
+
+/* -------------- PHOTOS ---------------------*/
+
+div.links ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+div.links ul li {
+  cursor: pointer;
+  font-family: 'Homenaje';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 22px;
+
+  color: #8c8686;
+}
+
+.city{
+  display: none;
+}
+
+.city.on{
+  display: block;
+}
+
+div.links ul li.on {
+  color: #000000;
 }

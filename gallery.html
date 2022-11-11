@@ -17,7 +17,8 @@
     <div class="container">
       <div class="full-img" id="full_img_box">
         <img src="./assets/home/Vendeur.JPG" id="full_img" alt="Full image" />
-        <span onclick="CloseImgBox()">X</span>
+        <span onclick="CloseImgBox()" id="close_button">X</span>
+        <span id="description">Feira do Relógio - Lisboa 2022</span>
       </div>
       <header>
         <a href="./index.html"><h2>Nicolas Marra</h2></a>
@@ -54,10 +55,312 @@
           </li>
         </ul>
       </nav>
-      <main id="photos"></main>
 
+      
+      <main id="photos">
+      <div class="links">
+        <ul>
+          <li class="link on" id="OptionStrabourg" onclick="SeeCity('Strasbourg','OptionStrabourg')">Strasbourg</li>
+          <li class="link" id="OptionParis" onclick="SeeCity('Paris','OptionParis')">Paris</li>
+          <li class="link" id="OptionMetz" onclick="SeeCity('Metz','OptionMetz')">Metz</li>
+          <li class="link" id="OptionLisbonne" onclick="SeeCity('Lisbonne','OptionLisbonne')">Lisbonne</li>
+        </ul>
+      </div>
+
+        
+      <div class="city on" id="Strasbourg">
+        <ul>
+          <li>
+            <img
+              src="./assets/Strasbourg/Strasbourg_4.JPG"
+              alt="Couple amoureux - Strasbourg 2022"
+              onclick="OpenFullImg(this.src,this.alt)"
+            />
+          </li>
+          <li>
+            <img
+              src="./assets/Strasbourg/Strasbourg_3.JPG"
+              alt="Couple amoureux - Strasbourg 2022"
+              onclick="OpenFullImg(this.src,this.alt)"
+            />
+          </li>
+        </ul>
+
+        <ul>
+          <li>
+            <img
+              src="./assets/Strasbourg/Strasbourg_7.JPG"
+              alt="Couple amoureux - Strasbourg 2022"
+              onclick="OpenFullImg(this.src,this.alt)"
+            />
+          </li>
+          <li>
+            <img
+              src="./assets/Strasbourg/Strasbourg_2.JPG"
+              alt="Couple amoureux - Strasbourg 2022"
+              onclick="OpenFullImg(this.src,this.alt)"
+            />
+          </li>
+        </ul>
+
+        <ul>
+          <li>
+            <img
+              src="./assets/Strasbourg/Strasbourg_8.JPG"
+              alt="Enfants joyeux  - Strasbourg 2022"
+              onclick="OpenFullImg(this.src,this.alt)"
+            />
+          </li>
+          <li>
+            <img
+              src="./assets/Strasbourg/Strasbourg_10.JPG"
+              alt="Jeune allongé - Strasbourg 2022"
+              onclick="OpenFullImg(this.src,this.alt)"
+            />
+          </li>
+        </ul>
+
+        <ul>
+          <li>
+            <img
+              src="./assets/Strasbourg/Strasbourg_5.JPG"
+              alt="SDF - Strasbourg 2022"
+              onclick="OpenFullImg(this.src,this.alt)"
+            />
+          </li>
+          <li>
+            <img
+              src="./assets/Strasbourg/Strasbourg_9.JPG"
+              alt="Rue - Strasbourg 2022"
+              onclick="OpenFullImg(this.src,this.alt)"
+            />
+          </li>
+        </ul>
+
+        <ul>
+          <li>
+            <img
+              src="./assets/Strasbourg/Strasbourg_11.JPG"
+              alt="Voiture - Strasbourg 2022"
+              onclick="OpenFullImg(this.src,this.alt)"
+            />
+          </li>
+          <li>
+            <img
+              src="./assets/Strasbourg/Strasbourg_1.JPG"
+              alt="Winston Churchil - Strasbourg 2022"
+              onclick="OpenFullImg(this.src,this.alt)"
+            />
+          </li>
+        </ul>
+      </div>
+
+      <div class="city" id="Paris">
+        <ul>
+          <li>
+            <img
+              src="./assets/Paris/Paris_1.JPG"
+              alt="Paris 2022"
+              onclick="OpenFullImg(this.src,this.alt)"
+            />
+          </li>
+          <li>
+            <img
+              src="./assets/Paris/Paris_2.JPG"
+              alt="Paris 2022"
+              onclick="OpenFullImg(this.src,this.alt)"
+            />
+          </li>
+        </ul>
+      </div>
+
+      <div class="city" id="Metz">
+        <ul>
+          <li>
+            <img
+              src="./assets/Metz/Metz_1.JPG"
+              alt="Metz 2022"
+              onclick="OpenFullImg(this.src,this.alt)"
+            />
+          </li>
+          <li>
+            <img
+              src="./assets/Metz/Metz_2.JPG"
+              alt="Metz 2022"
+              onclick="OpenFullImg(this.src,this.alt)"
+            />
+          </li>
+        </ul>
+
+        <ul>
+          <li>
+            <img
+              src="./assets/Metz/Metz_3.JPG"
+              alt="Metz 2022"
+              onclick="OpenFullImg(this.src,this.alt)"
+            />
+          </li>
+          <li>
+            <img
+              src="./assets/Metz/Metz_4.JPG"
+              alt="Metz 2022"
+              onclick="OpenFullImg(this.src,this.alt)"
+            />
+          </li>
+        </ul>
+
+        <ul>
+          <li>
+            <img
+              src="./assets/Metz/Metz_5.JPG"
+              alt="Metz 2022"
+              onclick="OpenFullImg(this.src,this.alt)"
+            />
+          </li>
+          <li>
+            <img
+              src="./assets/Metz/Metz_6.JPG"
+              alt="Metz 2022"
+              onclick="OpenFullImg(this.src,this.alt)"
+            />
+          </li>
+        </ul>
+      </div>
+
+      <div class="city" id="Lisbonne">
+        <ul>
+          <li>
+            <img
+              src="./assets/Lisbonne/Lisbonne_1.JPG"
+              alt="Metz 2022"
+              onclick="OpenFullImg(this.src,this.alt)"
+            />
+          </li>
+          <li>
+            <img
+              src="./assets/Lisbonne/Lisbonne_2.JPG"
+              alt="Metz 2022"
+              onclick="OpenFullImg(this.src,this.alt)"
+            />
+          </li>
+        </ul>
+
+        <ul>
+          <li>
+            <img
+              src="./assets/Lisbonne/Lisbonne_3.JPG"
+              alt="Metz 2022"
+              onclick="OpenFullImg(this.src,this.alt)"
+            />
+          </li>
+          <li>
+            <img
+              src="./assets/Lisbonne/Lisbonne_4.JPG"
+              alt="Metz 2022"
+              onclick="OpenFullImg(this.src,this.alt)"
+            />
+          </li>
+        </ul>
+
+        <ul>
+          <li>
+            <img
+              src="./assets/Lisbonne/Lisbonne_5.JPG" 
+              alt="Metz 2022"
+              onclick="OpenFullImg(this.src,this.alt)"
+            />
+          </li>
+          <li>
+            <img
+              src="./assets/Lisbonne/Lisbonne_6.JPG"   
+              alt="Metz 2022"
+              onclick="OpenFullImg(this.src,this.alt)"
+            />
+          </li>
+        </ul>
+
+        <ul>
+          <li>
+            <img
+              src="./assets/Lisbonne/Lisbonne_7.JPG"
+              alt="Metz 2022"
+              onclick="OpenFullImg(this.src,this.alt)"
+            />
+          </li>
+          <li>
+            <img
+              src="./assets/Lisbonne/Lisbonne_8.JPG"
+              alt="Metz 2022"
+              onclick="OpenFullImg(this.src,this.alt)"
+            />
+          </li>
+        </ul>
+
+        <ul>
+          <li>
+            <img
+              src="./assets/Lisbonne/Lisbonne_9.JPG"
+              alt="Metz 2022"
+              onclick="OpenFullImg(this.src,this.alt)"
+            />
+          </li>
+          <li>
+            <img
+              src="./assets/Lisbonne/Lisbonne_10.JPG"
+              alt="Metz 2022"
+              onclick="OpenFullImg(this.src,this.alt)"
+            />
+          </li>
+        </ul>
+
+        <ul>
+          <li>
+            <img
+              src="./assets/Lisbonne/Lisbonne_11.JPG" 
+              alt="Metz 2022"
+              onclick="OpenFullImg(this.src,this.alt)"
+            />
+          </li>
+          <li>
+            <img
+              src="./assets/Lisbonne/Lisbonne_12.JPG"   
+              alt="Metz 2022"
+              onclick="OpenFullImg(this.src,this.alt)"
+            />
+          </li>
+        </ul>
+
+        <ul>
+          <li>
+            <img
+              src="./assets/Lisbonne/Lisbonne_13.JPG" 
+              alt="Metz 2022"
+              onclick="OpenFullImg(this.src,this.alt)"
+            />
+          </li>
+          <li>
+            <img
+              src="./assets/Lisbonne/Lisbonne_14.JPG"   
+              alt="Metz 2022"
+              onclick="OpenFullImg(this.src,this.alt)"
+            />
+          </li>
+        </ul>
+
+        <ul>
+          <li>
+            <img
+              src="./assets/Lisbonne/Lisbonne_15.JPG" 
+              alt="Metz 2022"
+              onclick="OpenFullImg(this.src,this.alt)"
+            />
+          </li>
+        </ul>
+      </div>
+
+      
+      </main>
       <footer id="footer">
-        <p>Copyright © all rights reserved</p>
       </footer>
     </div>
     <script src="script.js"></script>
