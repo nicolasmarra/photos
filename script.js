@@ -221,7 +221,7 @@ function handleTouchEnd(e)
 
 }
 
-function handleTouchEnd()
+function handleTouchMove()
 {
   const limite = 100;
 
@@ -242,6 +242,8 @@ function handleTouchEnd()
 const images = document.querySelectorAll('.img');
 images.forEach(img => {
   img.addEventListener('click', function() {
-    OpenFullImg(img.src, img.alt)
+    img.addEventListener('touchstart', handleTouchStart);
+    img.addEventListener('touchend', handleTouchEnd);
+    img.addEventListener('touchmove', handleTouchMove);
   })
 })
