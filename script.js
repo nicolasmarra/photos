@@ -1,6 +1,9 @@
 let currentImgIndex = 0
 let currentVille = "Strasbourg"
 
+let touchstartX = 0
+let touchEndX = 0
+
 const currentPage = document.location.pathname.split('/').pop();
 
 const images_index = [
@@ -206,3 +209,39 @@ document.addEventListener('keydown', function(event) {
     
   }
 });
+
+function handleTouchStart(e)
+{
+  touchstartX = e.touches[0].clientX;
+}
+
+function handleTouchEnd(e)
+{
+  touchEndX = e.touches[0].clientX;
+
+}
+
+function handleTouchEnd()
+{
+  const limite = 100;
+
+  const diffX = touchEndX - touchstartX;
+
+  if (Math.abs(diffX) > limite)
+  {
+    if (diffX > 0) {
+      if (currentPage === 'index.html') PrevImageIndex();
+      else if (currentPage === 'gallery.html') PrevImageGallery();
+    } else {
+      if (currentPage === 'index.html') NextImageIndex();
+      else if (currentPage === 'gallery.html') NextImageGallery();
+    }
+  }
+}
+
+const images = document.querySelectorAll('.img');
+images.forEach(img => {
+  img.addEventListener('click', function() {
+    OpenFullImg(img.src, img.alt)
+  })
+})

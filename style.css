@@ -167,16 +167,13 @@ footer {
   cursor: pointer;
 }
 
-.full-img span#next_button
-{
-  right : 55%;
+.full-img span#prev_button {
+  left: 45%;
 }
 
-.full-img span#prev_button
-{
-  left : 55%;
+.full-img span#next_button {
+  right: 45%;
 }
-
 
 .full-img span#close_button {
   top: 5%;
