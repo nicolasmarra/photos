@@ -132,6 +132,7 @@ function OnMenu() {
 }
 
 
+
 function SeeCity(nameCity,optionCity){
   
   ClearCity()
@@ -210,44 +211,146 @@ document.addEventListener('keydown', function(event) {
   }
 });
 
-function handleTouchStart(e)
-{
-  touchstartX = e.touches[0].clientX;
+
+function AddPhotosIndex() {
+
+  const main = document.getElementById('photos')
+
+  let currentUL = null
+     images_index.forEach ((image,index) =>  
+     {
+
+      if(index % 2 == 0)
+      {
+        currentUL = document.createElement('ul')
+        main.appendChild(currentUL)
+      }
+
+       const li = document.createElement('li')
+       const img = document.createElement('img')
+       img.src = image.src
+       img.alt = image.description
+       img.onclick = () => OpenFullImg(image.src, image.description) 
+       i++
+       
+       li.appendChild(img)
+       currentUL.appendChild(li)
+       
+      });
+
+
 }
 
-function handleTouchEnd(e)
+
+function AddMenuGallery()
 {
-  touchEndX = e.touches[0].clientX;
 
-}
-
-function handleTouchMove()
-{
-  e.preventDefault();
-  const limite = 100;
-
-  const diffX = touchEndX - touchstartX;
-
-  if (Math.abs(diffX) > limite)
+  const main = document.getElementById('photos')
+  const links = document.createElement('div')
+  links.className = "links"
+  const ul = document.createElement('ul')
+  main.appendChild(links)
+  links.appendChild(ul)
+  
+  for (const ville in images_gallery) 
   {
-    if (diffX > 0) {
-      if (currentPage === 'index.html') PrevImageIndex();
-      else if (currentPage === 'gallery.html') PrevImageGallery();
-    } else {
-      if (currentPage === 'index.html') NextImageIndex();
-      else if (currentPage === 'gallery.html') NextImageGallery();
-    }
+    const li = document.createElement('li')
+    li.className = "link"
+    li.id = "Option" + ville
+    li.onclick = () => SeeCity(ville,li.id)
+    li.innerHTML = ville
+    ul.appendChild(li)
+
   }
 
-  touchstartX = 0;
-  touchEndX = 0;
 }
 
-const images = document.querySelectorAll('.img');
-images.forEach(img => {
-  img.addEventListener('click', function() {
-    img.addEventListener('touchstart', handleTouchStart);
-    img.addEventListener('touchend', handleTouchEnd);
-    img.addEventListener('touchmove', handleTouchMove);
-  })
-})
+function AddPhotosGallery() 
+{
+  AddMenuGallery()
+  const main = document.getElementById('photos')
+  let currentUL = null
+
+  for (const ville in images_gallery)
+  {
+    const villeDiv = document.createElement('div')
+    villeDiv.classList.add('city')
+    if (ville === 'Strasbourg')
+    {
+      console.log(ville)
+      villeDiv.classList.add('on')
+    }
+    villeDiv.id = ville
+    main.appendChild(villeDiv)
+
+    
+    images_gallery[ville].forEach ((image,index) =>  
+    {
+      if(index % 2 == 0)
+      {
+        currentUL = document.createElement('ul')
+        villeDiv.appendChild(currentUL)
+      }
+      const li = document.createElement('li')
+      const img = document.createElement('img')
+      img.src = image.src
+      img.alt = image.description
+      img.onclick = () => OpenFullImg(image.src, image.description) 
+      
+      li.appendChild(img)
+      currentUL.appendChild(li)
+      
+    });
+  }
+
+  SeeCity('Strasbourg','OptionStrasbourg')
+}
+
+function AddPhotosGalleryByVille(ville_affichage)
+{
+  AddMenuGallery()
+  const main = document.getElementById('photos')
+  let currentUL = null
+
+  for (const ville in images_gallery)
+  {
+    const villeDiv = document.createElement('div')
+    villeDiv.classList.add('city')
+    if (ville === ville_affichage)
+    {
+      console.log(ville)
+      villeDiv.classList.add('on')
+    
+    villeDiv.id = ville
+    main.appendChild(villeDiv)
+
+    
+    images_gallery[ville].forEach ((image,index) =>  
+    {
+      if(index % 2 == 0)
+      {
+        currentUL = document.createElement('ul')
+        main.appendChild(currentUL)
+      }
+      const li = document.createElement('li')
+      const img = document.createElement('img')
+      img.src = image.src
+      img.alt = image.description
+      img.onclick = () => OpenFullImg(image.src, image.description) 
+      
+      li.appendChild(img)
+      currentUL.appendChild(li)
+      
+    });
+  }
+
+}
+}
+
+function AddPhotos()
+{
+  if(currentPage === 'index.html') AddPhotosIndex()
+  else if(currentPage === 'gallery.html') AddPhotosGallery()
+}
+
+window.onload = AddPhotos;
