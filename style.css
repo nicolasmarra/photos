@@ -168,11 +168,11 @@ footer {
 }
 
 .full-img span#prev_button {
-  left: 45%;
+  right: 45%;
 }
 
 .full-img span#next_button {
-  right: 45%;
+  left: 45%;
 }
 
 .full-img span#close_button {
