@@ -223,6 +223,7 @@ function handleTouchEnd(e)
 
 function handleTouchMove()
 {
+  e.preventDefault();
   const limite = 100;
 
   const diffX = touchEndX - touchstartX;
@@ -237,6 +238,9 @@ function handleTouchMove()
       else if (currentPage === 'gallery.html') NextImageGallery();
     }
   }
+
+  touchstartX = 0;
+  touchEndX = 0;
 }
 
 const images = document.querySelectorAll('.img');
