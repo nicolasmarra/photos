@@ -96,6 +96,12 @@ nav ul.menu li a h2 {
   color: #000000;
 }
 
+nav ul.menu li a:hover h2
+{
+  color: #ff4500;
+  transition: color 0.3s ease;
+}
+
 nav ul.footer {
   margin-top: 150px;
   display: flex;
@@ -151,8 +157,26 @@ footer {
   position: absolute;
   font-family: 'Inter';
   color: #fff;
-  bottom: 23%;
+  bottom: 22%;
 }
+
+.full-img span.navigation
+{
+  bottom: 15%;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.full-img span#next_button
+{
+  right : 48%;
+}
+
+.full-img span#prev_button
+{
+  left : 48%;
+}
+
 
 .full-img span#close_button {
   top: 5%;
@@ -181,6 +205,7 @@ main ul li img {
 
 main ul li img:hover {
   transform: scale(1.1);
+  transition: transform 0.3 ease;
 }
 
 /* -------------- BIO ---------------------*/

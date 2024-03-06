@@ -17,7 +17,9 @@
     <div class="container">
       <div class="full-img" id="full_img_box">
         <img src="./assets/home/Vendeur.JPG" id="full_img" alt="Full image" />
-        <span onclick="CloseImgBox()" id="close_button">X</span>
+        <span onclick="CloseImgBox()" id="close_button">&times;</span>
+        <span class="navigation" id="prev_button" onclick="NextImg()">&#10094;</span>
+        <span class="navigation" id="next_button" onclick="PrevImg()">&#10095;</span>
         <span id="description">Feira do Relógio - Lisboa 2022</span>
       </div>
       <header>
@@ -63,7 +65,7 @@
               alt="Feira do Relógio - Lisboa 2022"
               onclick="OpenFullImg(this.src,this.alt)"
             />
-          </li>
+            </li>
           <li>
             <img
               src="./assets/home/Fille.JPG"
