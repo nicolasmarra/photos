@@ -338,8 +338,8 @@ function AddPhotosGalleryByVille(ville_affichage)
       img.alt = image.description
       img.onclick = () => OpenFullImg(image.src, image.description) 
       
-      li.appendChild(img)
-      currentUL.appendChild(li)
+      li.appendChild(img);
+      currentUL.appendChild(li);
       
     });
   }
