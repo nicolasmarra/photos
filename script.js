@@ -1,95 +1,50 @@
 let currentImgIndex = 0
 let currentVille = "Strasbourg"
-
-let touchstartX = 0
-let touchEndX = 0
+let images_index = [];
 
 const currentPage = window.location.pathname
 
-const images_index = [
-  {
-    src: "./assets/home/Vendeur.JPG",
-    description: "Feira do Relógio - Lisboa 2022"
-  },
-  {
-    src: "./assets/home/Fille.JPG",
-    description: "Feira do Relógio - Lisboa 2022"
-  },
-  {
-    src: "./assets/home/Metz.JPG",
-    description: "Metz 2022"
-  },
-  {
-    src: "./assets/home/Gare_Metz.JPG",
-    description: "Gare de Metz - Metz 2022"
-  },
-  {
-    src: "./assets/home/winstonchurchill.JPG",
-    description: "Winston Churchil - Strasbourg 2022"
-  },
-  {
-    src: "./assets/home/Paris.JPG",
-    description: "Paris 2022"
-  },
-  {
-    src: "./assets/home/Avenida.JPG",
-    description: "Avenida da Liberdade - Lisboa 2022"
-  },
-  {
-    src: "./assets/home/Lisboa.JPG",
-    description: "Lisboa 2022"
-  },
-  {
-    src: "./assets/home/rue.JPG",
-    description: "Rue - Strasbourg 2022"
-  },
-  {
-    src: "./assets/home/couple.JPG",
-    description: "Couple amoureux - Strasbourg 2022"
-  }
-];
-
 const images_gallery = {
   Strasbourg: [
-    { src: "./assets/Strasbourg/Strasbourg_4.JPG", description: "Couple amoureux - Strasbourg 2022" },
-    { src: "./assets/Strasbourg/Strasbourg_3.JPG", description: "Couple amoureux - Strasbourg 2022" },
-    { src: "./assets/Strasbourg/Strasbourg_7.JPG", description: "Couple amoureux - Strasbourg 2022"},
-    { src: "./assets/Strasbourg/Strasbourg_2.JPG", description: "Couple amoureux - Strasbourg 2022"},
-    { src: "./assets/Strasbourg/Strasbourg_8.JPG", description: "Enfants joyeux  - Strasbourg 2022"},
-    { src: "./assets/Strasbourg/Strasbourg_10.JPG", description: "Jeune allongé - Strasbourg 2022"},
-    { src: "./assets/Strasbourg/Strasbourg_5.JPG", description: "SDF - Strasbourg 2022"},
-    { src: "./assets/Strasbourg/Strasbourg_9.JPG", description: "Rue - Strasbourg 2022"},
-    { src: "./assets/Strasbourg/Strasbourg_11.JPG", description: "Voiture - Strasbourg 2022"},
-    { src: "./assets/Strasbourg/Strasbourg_1.JPG", description: "Winston Churchil - Strasbourg 2022"}
+    { src: "./assets/Strasbourg/Strasbourg_4.jpeg", description: "Couple amoureux - Strasbourg 2022", index: false },
+    { src: "./assets/Strasbourg/Strasbourg_3.jpeg", description: "Couple amoureux - Strasbourg 2022",index:true },
+    { src: "./assets/Strasbourg/Strasbourg_7.jpeg", description: "Couple amoureux - Strasbourg 2022", index: false},
+    { src: "./assets/Strasbourg/Strasbourg_2.jpeg", description: "Couple amoureux - Strasbourg 2022", index: false},
+    { src: "./assets/Strasbourg/Strasbourg_8.jpeg", description: "Enfants joyeux  - Strasbourg 2022", index: false},
+    { src: "./assets/Strasbourg/Strasbourg_10.jpeg", description: "Jeune allongé - Strasbourg 2022", index: false},
+    { src: "./assets/Strasbourg/Strasbourg_5.jpeg", description: "SDF - Strasbourg 2022", index: false},
+    { src: "./assets/Strasbourg/Strasbourg_9.jpeg", description: "Rue - Strasbourg 2022", index:true},
+    { src: "./assets/Strasbourg/Strasbourg_11.jpeg", description: "Voiture - Strasbourg 2022", index: false},
+    { src: "./assets/Strasbourg/Strasbourg_1.jpeg", description: "Winston Churchil - Strasbourg 2022", index: true}
   ],
   Paris: [
-    { src: "./assets/Paris/Paris_1.JPG", description: "Paris 2022" },
-    { src: "./assets/Paris/Paris_2.JPG", description: "Paris 2022" }
+    { src: "./assets/Paris/Paris_1.jpeg", description: "Paris 2022", index: true },
+    { src: "./assets/Paris/Paris_2.jpeg", description: "Paris 2022", index: false }
   ],
   Metz: [
-    { src: "./assets/Metz/Metz_1.JPG", description: "Metz 2022" },
-    { src: "./assets/Metz/Metz_2.JPG", description: "Metz 2022" },
-    { src: "./assets/Metz/Metz_3.JPG", description: "Metz 2022" },
-    { src: "./assets/Metz/Metz_4.JPG", description: "Metz 2022" },
-    { src: "./assets/Metz/Metz_5.JPG", description: "Metz 2022" },
-    { src: "./assets/Metz/Metz_6.JPG", description: "Metz 2022" }
+    { src: "./assets/Metz/Metz_1.jpeg", description: "Metz 2022", index: true},
+    { src: "./assets/Metz/Metz_2.jpeg", description: "Metz 2022", index: true},
+    { src: "./assets/Metz/Metz_3.jpeg", description: "Metz 2022", index: false},
+    { src: "./assets/Metz/Metz_4.jpeg", description: "Metz 2022", index: false},
+    { src: "./assets/Metz/Metz_5.JPG", description: "Metz 2022", index: false },
+    { src: "./assets/Metz/Metz_6.jpeg", description: "Metz 2022", index: false }
   ],
   Lisbonne: [
-    { src: "./assets/Lisbonne/Lisbonne_1.JPG", description: "Lisbonne 2022" },
-    { src: "./assets/Lisbonne/Lisbonne_2.JPG", description: "Lisbonne 2022" },
-    { src: "./assets/Lisbonne/Lisbonne_3.JPG", description: "Lisbonne 2022" },
-    { src: "./assets/Lisbonne/Lisbonne_4.JPG", description: "Lisbonne 2022" },
-    { src: "./assets/Lisbonne/Lisbonne_5.JPG", description: "Lisbonne 2022" },
-    { src: "./assets/Lisbonne/Lisbonne_6.JPG", description: "Lisbonne 2022" },
-    { src: "./assets/Lisbonne/Lisbonne_7.JPG", description: "Lisbonne 2022" },
-    { src: "./assets/Lisbonne/Lisbonne_8.JPG", description: "Lisbonne 2022" },
-    { src: "./assets/Lisbonne/Lisbonne_9.JPG", description: "Lisbonne 2022" },
-    { src: "./assets/Lisbonne/Lisbonne_10.JPG", description: "Lisbonne 2022" },
-    { src: "./assets/Lisbonne/Lisbonne_11.JPG", description: "Lisbonne 2022" },
-    { src: "./assets/Lisbonne/Lisbonne_12.JPG", description: "Lisbonne 2022" },
-    { src: "./assets/Lisbonne/Lisbonne_13.JPG", description: "Lisbonne 2022" },
-    { src: "./assets/Lisbonne/Lisbonne_14.JPG", description: "Lisbonne 2022" },
-    { src: "./assets/Lisbonne/Lisbonne_15.JPG", description: "Lisbonne 2022" }
+    { src: "./assets/Lisbonne/Lisbonne_1.jpeg", description: "Lisbonne 2022", index: true },
+    { src: "./assets/Lisbonne/Lisbonne_2.JPG", description: "Lisbonne 2022", index: true },
+    { src: "./assets/Lisbonne/Lisbonne_3.jpeg", description: "Lisbonne 2022", index: false },
+    { src: "./assets/Lisbonne/Lisbonne_4.JPG", description: "Lisbonne 2022", index: false },
+    { src: "./assets/Lisbonne/Lisbonne_5.jpeg", description: "Lisbonne 2022", index: true },
+    { src: "./assets/Lisbonne/Lisbonne_6.jpeg", description: "Lisbonne 2022", index: true },
+    { src: "./assets/Lisbonne/Lisbonne_7.jpeg", description: "Lisbonne 2022", index: false },
+    { src: "./assets/Lisbonne/Lisbonne_8.jpeg", description: "Lisbonne 2022", index: false },
+    { src: "./assets/Lisbonne/Lisbonne_9.jpeg", description: "Lisbonne 2022", index: false },
+    { src: "./assets/Lisbonne/Lisbonne_10.jpeg", description: "Lisbonne 2022", index: false },
+    { src: "./assets/Lisbonne/Lisbonne_11.jpeg", description: "Lisbonne 2022", index: true },
+    { src: "./assets/Lisbonne/Lisbonne_12.jpeg", description: "Lisbonne 2022", index: false },
+    { src: "./assets/Lisbonne/Lisbonne_13.jpeg", description: "Lisbonne 2022", index: false },
+    { src: "./assets/Lisbonne/Lisbonne_14.JPG", description: "Lisbonne 2022", index: false },
+    { src: "./assets/Lisbonne/Lisbonne_15.jpeg", description: "Lisbonne 2022", index: true }
     
   ]
 };
@@ -164,6 +119,7 @@ function ClearCity(){
 
 function NextImageIndex()
 {
+
   currentImgIndex++
   if (currentImgIndex >= images_index.length) currentImgIndex = 0
 
@@ -211,37 +167,6 @@ document.addEventListener('keydown', function(event) {
   }
 });
 
-
-function AddPhotosIndex() {
-
-  const main = document.getElementById('photos')
-
-  let currentUL = null
-     images_index.forEach ((image,index) =>  
-     {
-
-      if(index % 2 == 0)
-      {
-        currentUL = document.createElement('ul')
-        main.appendChild(currentUL)
-      }
-
-       const li = document.createElement('li')
-       const img = document.createElement('img')
-       img.src = image.src
-       img.alt = image.description
-       img.onclick = () => OpenFullImg(image.src, image.description) 
-       i++
-       
-       li.appendChild(img)
-       currentUL.appendChild(li)
-       
-      });
-
-
-}
-
-
 function AddMenuGallery()
 {
 
@@ -265,6 +190,39 @@ function AddMenuGallery()
 
 }
 
+function AddPhotosIndex()
+{
+  const main = document.getElementById('photos')
+  let currentUL = null
+
+  let count = 0
+  Object.values(images_gallery).forEach(ville=> {
+    ville.forEach(image=>{
+    
+        
+         if(image.index === true)
+          {
+            if(count % 2 == 0)
+            {
+              currentUL = document.createElement('ul')
+              main.appendChild(currentUL)
+            }
+          
+             const li = document.createElement('li')
+             const img = document.createElement('img')
+             img.src = image.src
+             img.alt = image.description
+             img.onclick = () => OpenFullImg(image.src, image.description) 
+            
+       
+            li.appendChild(img)
+            currentUL.appendChild(li)
+            images_index.push(image)
+            count ++
+         }
+      });
+  });
+}
 function AddPhotosGallery() 
 {
   AddMenuGallery()

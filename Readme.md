@@ -9,4 +9,7 @@ Ce site web personnel est destiné à présenter mon portfolio photographique. L
 - Affichage des images en plein écran avec possibilité de navigation à l'aide des flèches ou des touches du clavier.
 
 
+## Auteur
+
+Ce site a été créé par [Nicolas Marra](https://marra-photos.netlify.app/). Pour toute question ou suggestion, n'hésitez pas à le contacter à [nicolasmarra12@gmail.com](mailto:nicolasmarra12@gmail.com).
 
