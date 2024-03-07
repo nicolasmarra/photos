@@ -4,7 +4,7 @@ let currentVille = "Strasbourg"
 let touchstartX = 0
 let touchEndX = 0
 
-const currentPage = document.location.pathname.split('/').pop();
+const currentPage = window.location.pathname
 
 const images_index = [
   {
@@ -200,13 +200,13 @@ function PrevImageGallery()
 }
 
 document.addEventListener('keydown', function(event) {
-  if (event.code === 'ArrowLeft') { 
-    if (currentPage === 'index.html') PrevImageIndex();
-    else if (currentPage === 'gallery.html') PrevImageGallery();
+  if (event.code === 'ArrowLeft') {   
+    if(currentPage === '/') PrevImageIndex();
+    else if(currentPage.startsWith('/gallery')) PrevImageGallery();
     
   } else if (event.code === 'ArrowRight') { 
-    if (currentPage === 'index.html') NextImageIndex();
-     else if (currentPage === 'gallery.html') NextImageGallery();
+    if (currentPage === '/') NextImageIndex();
+    else if(currentPage.startsWith('/gallery')) NextImageGallery();
     
   }
 });
@@ -349,8 +349,8 @@ function AddPhotosGalleryByVille(ville_affichage)
 
 function AddPhotos()
 {
-  if(currentPage === 'index.html') AddPhotosIndex()
-  else if(currentPage === 'gallery.html') AddPhotosGallery()
+  if(currentPage === '/') AddPhotosIndex()
+  else if(currentPage.startsWith('/gallery')) AddPhotosGallery()
 }
 
 window.onload = AddPhotos;
