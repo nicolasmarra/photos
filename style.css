@@ -268,3 +268,13 @@ div.links ul li {
 div.links ul li.on {
   color: #000000;
 }
+
+
+/* Responsive */
+
+@media (min-width : 1024px) {
+
+  
+  
+  
+}

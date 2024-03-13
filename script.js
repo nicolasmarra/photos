@@ -1,4 +1,5 @@
 let currentImgIndex = 0
+let currentImgIndex_Gallery = 0
 let currentVille = "Strasbourg"
 let images_index = [];
 
@@ -119,7 +120,6 @@ function ClearCity(){
 
 function NextImageIndex()
 {
-
   currentImgIndex++
   if (currentImgIndex >= images_index.length) currentImgIndex = 0
 
@@ -139,19 +139,19 @@ function PrevImageIndex()
 function NextImageGallery()
 {
   const gallery = images_gallery[currentVille]
-  currentImgIndex++
-  if (currentImgIndex >= gallery.length) currentImgIndex = 0
+  currentImgIndex_Gallery++
+  if (currentImgIndex_Gallery >= gallery.length) currentImgIndex_Gallery = 0
 
-  OpenFullImg(gallery[currentImgIndex].src, gallery[currentImgIndex].description)
+  OpenFullImg(gallery[currentImgIndex_Gallery].src, gallery[currentImgIndex_Gallery].description)
 }
 
 function PrevImageGallery()
 {
   const gallery = images_gallery[currentVille]
-  currentImgIndex--
-  if (currentImgIndex < 0) currentImgIndex = gallery.length - 1
+  currentImgIndex_Gallery--
+  if (currentImgIndex_Gallery < 0) currentImgIndex_Gallery = gallery.length - 1
 
-  OpenFullImg(gallery[currentImgIndex].src, gallery[currentImgIndex].description)
+  OpenFullImg(gallery[currentImgIndex_Gallery].src, gallery[currentImgIndex_Gallery].description)
 
 }
 
@@ -309,6 +309,7 @@ function AddPhotos()
 {
   if(currentPage === '/') AddPhotosIndex()
   else if(currentPage.startsWith('/gallery')) AddPhotosGallery()
+  else if(currentPage.startsWith('/index')) AddPhotosIndex()
 }
 
 window.onload = AddPhotos;
