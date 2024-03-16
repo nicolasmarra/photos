@@ -6,7 +6,7 @@
 
 body {
   margin: auto;
-  width: 414px;
+  width: 100%;
   height: 100vh;
   /*overflow: hidden;*/
 }
@@ -20,7 +20,7 @@ ul {
 }
 
 header {
-  padding-block: 25px;
+  padding-block: 2.5%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -36,6 +36,7 @@ header h2 {
   font-weight: 400;
   font-size: 28px;
   line-height: 31px;
+
   text-align: center;
 
   color: #000000;
@@ -151,6 +152,7 @@ footer {
 .full-img img {
   width: 90%;
   max-width: 400px;
+  max-height: 300px;
 }
 
 .full-img span {
@@ -162,17 +164,26 @@ footer {
 
 .full-img span.navigation
 {
-  bottom: 15%;
   font-size: 24px;
   cursor: pointer;
 }
 
 .full-img span#prev_button {
-  left: 45%;
+  left: 10%;
 }
 
 .full-img span#next_button {
-  right: 45%;
+  right: 10%;
+}
+
+.full-img span#prev_button, .full-img span#next_button {
+  top: 50%;
+  opacity: 0.5;
+}
+
+.full-img span#prev_button:hover, .full-img span#next_button:hover {
+  opacity: 1;
+  transition: opacity 0.3s ease;
 }
 
 .full-img span#close_button {
@@ -270,11 +281,121 @@ div.links ul li.on {
 }
 
 
-/* Responsive */
+/* RESPONSIVE */
 
 @media (min-width : 1024px) {
 
+  body {
+    width: 100%;
+  }
+  
+  header h2 {
+    width: 200px;
+    font-weight: 500;
+    font-size: 42px;
+    line-height: 1;
+    margin: 0;   
+  }
+  
+  header img {
+    display: none;
+  }
+  
+  nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+    
+  nav ul.menu {
+    margin-top: initial;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding-block: 10px;
+  }
+  
+  nav ul.menu li a h2 {
+    font-size: 30px;
+    padding: 10px;
+    line-height: 0.6;
+    text-align: center;
+    color: #000000;
+  }
+  
+  nav ul.menu li a:hover h2
+  {
+    color: #ff4500;
+    transition: color 0.3s ease;
+  }
+  
+  nav ul.footer {
+    display: none;
+    margin-top: initial;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  
+  nav ul.footer li
+  {
+    display: none;
+  }
+
+  .full-img img {
+    max-width: 650px;
+    max-height: 550px;
+  }
+  
+  .full-img span {
+    bottom: 8%;
+  }
+  
+  .full-img span.navigation
+  {
+    font-size: 30px;
+  }
+  
+  .full-img span#prev_button {
+    left: 5%;
+  }
+  
+  .full-img span#next_button {
+    right: 5%;
+  }
   
   
+  .full-img span#close_button {
+    top: 5%;
+    right: 5%;
+    font-size: 30px;
+    cursor: pointer;
+  }
+
+  /* -------------- ACCUEIL -----------------------*/
+
+  main ul {
+    gap: 18px;
+    margin-bottom: 20px;
+  }
+
+main ul li img {
+  width: 450px;
+  height: 280px;
+  cursor: pointer;
+  transition: 500ms;
+}
+
+main ul li img:hover {
+  transform: scale(1.1);
+  transition: transform 0.3 ease;
+}
+
   
 }

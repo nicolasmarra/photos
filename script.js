@@ -45,8 +45,18 @@ const images_gallery = {
     { src: "./assets/Lisbonne/Lisbonne_12.jpeg", description: "Lisbonne 2022", index: false },
     { src: "./assets/Lisbonne/Lisbonne_13.jpeg", description: "Lisbonne 2022", index: false },
     { src: "./assets/Lisbonne/Lisbonne_14.JPG", description: "Lisbonne 2022", index: false },
-    { src: "./assets/Lisbonne/Lisbonne_15.jpeg", description: "Lisbonne 2022", index: true }
-    
+    { src: "./assets/Lisbonne/Lisbonne_15.jpeg", description: "Lisbonne 2022", index: true },
+    { src: "./assets/Lisbonne/Lisbonne_16.JPG", description: "Lisbonne 2024", index: false },
+    { src: "./assets/Lisbonne/Lisbonne_17.JPG", description: "Lisbonne 2024", index: false },
+    { src: "./assets/Lisbonne/Lisbonne_18.JPG", description: "Lisbonne 2024", index: false },
+    { src: "./assets/Lisbonne/Lisbonne_19.JPG", description: "Lisbonne 2024", index: false },
+    { src: "./assets/Lisbonne/Lisbonne_20.JPG", description: "Lisbonne 2024", index: false },
+    { src: "./assets/Lisbonne/Lisbonne_21.JPG", description: "Lisbonne 2024", index: false },
+    { src: "./assets/Lisbonne/Lisbonne_22.JPG", description: "Lisbonne 2024", index: false },
+    { src: "./assets/Lisbonne/Lisbonne_23.JPG", description: "Lisbonne 2024", index: false },
+    { src: "./assets/Lisbonne/Lisbonne_24.JPG", description: "Lisbonne 2024", index: false },
+    { src: "./assets/Lisbonne/Lisbonne_25.JPG", description: "Lisbonne 2024", index: false },
+    { src: "./assets/Lisbonne/Lisbonne_26.JPG", description: "Lisbonne 2024", index: false }
   ]
 };
 
