@@ -4,6 +4,7 @@ let currentVille = "Strasbourg"
 let images_index = [];
 
 const currentPage = window.location.pathname
+let element_body = document.body;
 
 const images_gallery = {
   Strasbourg: [
@@ -73,12 +74,14 @@ const open_menu = document.getElementById('open_menu')
 
 function CloseImgBox() {
   fullImgBox.style.display = 'none'
+  element_body.style.overflow = 'auto' 
 }
 
 function OpenFullImg(source, description) {
   fullImgBox.style.display = 'flex'
   fullImg.src = source
   span.innerHTML = description
+  element_body.style.overflow = 'hidden'  
 }
 
 function OnMenu() {
