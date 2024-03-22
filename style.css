@@ -8,13 +8,32 @@
 {
   font-size: 62.5%; /*100% -> 16px, alors 10px -> 62.5%*/
 
+  /* couleurs */
+
+  --couleur-hover: #ff4500; 
+  --couleur-texte-2: #8c8686;
+  --couleur-hover-2: #ffa482; 
+  --couleur-texte-3: #333;
+
+  --couleur-texte: #000000;
+  --couleur-fond: #ffffff;
+
+  
 }
 
 body {
   margin: auto;
   width: 100%;
   height: 100vh;
+  background-color: var(--couleur-fond);
   /*overflow: hidden;*/
+}
+
+body.dark
+{
+  --couleur-texte: #ffffff;
+  --couleur-fond: #000000;
+
 }
 
 
@@ -46,8 +65,9 @@ header h2 {
 
   text-align: center;
 
-  color: #000000;
+  color: var(--couleur-texte);
 }
+
 
 header img {
   transform: translate(5rem);
@@ -74,7 +94,7 @@ nav {
 }
 
 nav h2.on {
-  border-bottom: 1px solid #000000;
+  border-bottom: 1px solid var(--couleur-texte);
 }
 
 nav a {
@@ -102,12 +122,12 @@ nav ul.menu li a h2 {
   line-height: 3.5rem;
   text-align: center;
 
-  color: #000000;
+  color: var(--couleur-texte);
 }
 
 nav ul.menu li a:hover h2
 {
-  color: #ff4500;
+  color : var(--couleur-hover);
   transition: color 0.3s ease;
 }
 
@@ -138,7 +158,7 @@ footer {
   font-size: 1.4rem;
   line-height: 1.7rem;
   text-align: center;
-  color: #000000;
+  color: var(--couleur-texte);
   padding-bottom: 2.5rem;
   transition: display 0.4s;
   
@@ -166,7 +186,7 @@ footer {
 .full-img span {
   position: absolute;
   font-family: 'Inter';
-  color: #fff;
+  color: var(--couleur-fond);
   bottom: 15%;
   font-size: 1.4rem;
 }
@@ -250,7 +270,7 @@ main.bio h1 {
   font-family: 'Inter', sans-serif;
   font-size: 2.4rem;
   font-weight: 600;
-  color: #333;
+  color: var(--couleur-texte-3);
   margin-top: 5rem;
   margin-bottom: 2rem; 
 }
@@ -273,12 +293,12 @@ div.links ul li {
   font-weight: 400;
   font-size: 2rem;
   line-height: 2.2rem;
-  color: #8c8686;
+  color: var(--couleur-texte-2);
 }
 
 div.links ul li:hover 
 {
-  color: #ffa482;
+  color: var(--couleur-hover-2);
   transition: color 0.3s ease;
 
 }
@@ -293,7 +313,7 @@ div.links ul li:hover
 }
 
 div.links ul li.on {
-  color: #000000;
+  color: var(--couleur-texte);
 }
 
 
@@ -339,12 +359,11 @@ div.links ul li.on {
     padding: 1rem;
     line-height: 0.6;
     text-align: center;
-    color: #000000;
   }
   
   nav ul.menu li a:hover h2
   {
-    color: #ff4500;
+    color: var(--couleur-hover);
     transition: color 0.3s ease;
   }
   
@@ -397,7 +416,7 @@ div.links ul li.on {
 
   /* -------------- ACCUEIL -----------------------*/
 
-  main ul {
+main ul {
     gap: 1.8rem;
     margin-bottom: 2rem;
   }

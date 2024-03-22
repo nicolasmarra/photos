@@ -4,7 +4,9 @@ let currentVille = "Strasbourg"
 let images_index = [];
 
 const currentPage = window.location.pathname
-let element_body = document.body;
+let element_body = document.body
+
+const ongoingTouches = [];
 
 const images_gallery = {
   Strasbourg: [
@@ -108,6 +110,7 @@ function SeeCity(nameCity,optionCity){
 
   const city = document.getElementById(nameCity)
   currentVille = nameCity
+  currentImgIndex_Gallery = 0
   const optioncity = document.getElementById(optionCity)
 
   city.classList.add('on')
@@ -170,14 +173,22 @@ function PrevImageGallery()
 
 document.addEventListener('keydown', function(event) {
   if (event.code === 'ArrowLeft') {   
+
     if(currentPage === '/') PrevImageIndex();
     else if(currentPage.startsWith('/gallery')) PrevImageGallery();
-    
+    else if(currentPage.startsWith('/index')) PrevImageIndex();
+
   } else if (event.code === 'ArrowRight') { 
-    if (currentPage === '/') NextImageIndex();
+
+    if(currentPage === '/') NextImageIndex();
     else if(currentPage.startsWith('/gallery')) NextImageGallery();
-    
+    else if(currentPage.startsWith('/index')) NextImageIndex();
+
+  } else if(event.code === 'Escape') {
+    if(fullImgBox.style.display === 'flex')
+    CloseImgBox();
   }
+
 });
 
 function AddMenuGallery()
@@ -325,4 +336,16 @@ function AddPhotos()
   else if(currentPage.startsWith('/index')) AddPhotosIndex()
 }
 
-window.onload = AddPhotos;
+function navigation()
+{
+  
+  fullImgBox.addEventListener("touchstart", handleStart);
+  fullImgBox.addEventListener("touchend", handleEnd);
+  fullImgBox.addEventListener("touchcancel", handleMove);
+  fullImgBox.addEventListener("touchmove", handleMove);
+
+  console.log('navigation')
+}
+
+document.addEventListener('DOMContentLoaded', AddPhotos);
+//document.addEventListener('DOMContentLoaded', navigation);
