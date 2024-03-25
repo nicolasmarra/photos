@@ -3,6 +3,10 @@ let currentImgIndex_Gallery = 0
 let currentVille = "Strasbourg"
 let images_index = [];
 
+let defilement_image = false;
+var intervalId = null;
+
+
 const currentPage = window.location.pathname
 let element_body = document.body
 
@@ -171,7 +175,11 @@ function PrevImageGallery()
 
 }
 
+
 document.addEventListener('keydown', function(event) {
+  
+  if (fullImgBox.style.display !== 'flex') return
+
   if (event.code === 'ArrowLeft') {   
 
     if(currentPage === '/') PrevImageIndex();
@@ -187,6 +195,29 @@ document.addEventListener('keydown', function(event) {
   } else if(event.code === 'Escape') {
     if(fullImgBox.style.display === 'flex')
     CloseImgBox();
+  } else if(event.code === 'Space') {
+
+    console.log('espace')
+    defilement_image = !defilement_image;
+    console.log(defilement_image)
+  
+
+    
+    if(defilement_image === true)
+    {
+  
+    if(currentPage === '/') intervalId = setInterval(NextImageIndex, 5000);
+    else if(currentPage.startsWith('/gallery')) intervalId = setInterval(NextImageGallery, 5000);
+    else if(currentPage.startsWith('/index')) intervalId = setInterval(NextImageIndex, 5000);
+
+    console.log('defilement_image')
+  
+
+    }else 
+    {
+    clearInterval(intervalId);
+    }
+    
   }
 
 });
@@ -348,4 +379,5 @@ function navigation()
 }
 
 document.addEventListener('DOMContentLoaded', AddPhotos);
+
 //document.addEventListener('DOMContentLoaded', navigation);
