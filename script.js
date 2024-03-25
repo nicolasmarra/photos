@@ -175,6 +175,22 @@ function PrevImageGallery()
 
 }
 
+function defilerImages()
+{
+    if(defilement_image === true)
+    {
+
+      if(currentPage === '/') intervalId = setInterval(NextImageIndex, 5000);
+      else if(currentPage.startsWith('/gallery')) intervalId = setInterval(NextImageGallery, 5000);
+      else if(currentPage.startsWith('/index')) intervalId = setInterval(NextImageIndex, 5000);
+
+    }
+    else 
+    {
+      clearInterval(intervalId);
+    }
+
+}
 
 document.addEventListener('keydown', function(event) {
   
@@ -197,26 +213,11 @@ document.addEventListener('keydown', function(event) {
     CloseImgBox();
   } else if(event.code === 'Space') {
 
-    console.log('espace')
+
     defilement_image = !defilement_image;
-    console.log(defilement_image)
   
-
+    defilerImages();
     
-    if(defilement_image === true)
-    {
-  
-    if(currentPage === '/') intervalId = setInterval(NextImageIndex, 5000);
-    else if(currentPage.startsWith('/gallery')) intervalId = setInterval(NextImageGallery, 5000);
-    else if(currentPage.startsWith('/index')) intervalId = setInterval(NextImageIndex, 5000);
-
-    console.log('defilement_image')
-  
-
-    }else 
-    {
-    clearInterval(intervalId);
-    }
     
   }
 
