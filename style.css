@@ -179,7 +179,7 @@ footer {
 
 .full-img img {
   width: 90%;
-  max-width: 40rem;
+  max-width: 30rem;
   max-height: 30rem;
 }
 
@@ -222,21 +222,16 @@ footer {
   cursor: pointer;
 }
 
-.full-img span#play_button {
-  top: 6%;
-  right: 7%;
-  cursor: pointer;
-}
-
 .full-img span#pause_button {
-  top: 6%;
-  right: 7%;
-  cursor: pointer;
   display: none;
 }
 
 .full-img span#play_button, .full-img span#pause_button {
   width: 3rem;
+  top: 6.2%;
+  right: 8.5%;
+  cursor: pointer;
+  
 }
 
 /* -------------- ACCUEIL -----------------------*/
@@ -430,25 +425,32 @@ div.links ul li.on {
     font-size: 3rem;
     cursor: pointer;
   }
+  
+  .full-img span#play_button, .full-img span#pause_button {
+    width: 3rem;
+    top: 6%;
+    right: 7%;
+    cursor: pointer;
+    
+  }
 
   /* -------------- ACCUEIL -----------------------*/
 
-main ul {
+  main ul {
     gap: 1.8rem;
     margin-bottom: 2rem;
   }
 
-main ul li img {
+  main ul li img {
   width: 45rem;
   height: 28rem;
   cursor: pointer;
   transition: 500ms;
-}
+  }
 
-main ul li img:hover {
+  main ul li img:hover {
   transform: scale(1.1);
   transition: transform 0.3 ease;
-}
-
-  
+  }
+ 
 }

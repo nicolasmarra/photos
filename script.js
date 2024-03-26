@@ -5,6 +5,8 @@ let images_index = [];
 
 let defilement_image = false;
 var intervalId = null;
+var element_play_button = document.getElementById('play_button');
+var element_pause_button = document.getElementById('pause_button');
 
 
 const currentPage = window.location.pathname
@@ -81,6 +83,9 @@ const open_menu = document.getElementById('open_menu')
 function CloseImgBox() {
   fullImgBox.style.display = 'none'
   element_body.style.overflow = 'auto' 
+  clearInterval(intervalId);
+  element_play_button.style.display = 'block';
+  element_pause_button.style.display = 'none';
 }
 
 function OpenFullImg(source, description) {
@@ -178,8 +183,6 @@ function PrevImageGallery()
 function defilerImages()
 {
     defilement_image = !defilement_image;
-    var element_play_button = document.getElementById('play_button');
-    var element_pause_button = document.getElementById('pause_button');
     if(defilement_image === true)
     {
 
