@@ -228,10 +228,9 @@ footer {
 
 .full-img span#play_button, .full-img span#pause_button {
   width: 3rem;
-  top: 6.2%;
+  top: 6%;
   right: 8.5%;
   cursor: pointer;
-  
 }
 
 /* -------------- ACCUEIL -----------------------*/
@@ -427,10 +426,7 @@ div.links ul li.on {
   }
   
   .full-img span#play_button, .full-img span#pause_button {
-    width: 3rem;
-    top: 6%;
-    right: 7%;
-    cursor: pointer;
+    right: 6.5%;
     
   }
 
