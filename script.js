@@ -177,17 +177,25 @@ function PrevImageGallery()
 
 function defilerImages()
 {
+    defilement_image = !defilement_image;
+    var element_play_button = document.getElementById('play_button');
+    var element_pause_button = document.getElementById('pause_button');
     if(defilement_image === true)
     {
 
-      if(currentPage === '/') intervalId = setInterval(NextImageIndex, 5000);
-      else if(currentPage.startsWith('/gallery')) intervalId = setInterval(NextImageGallery, 5000);
-      else if(currentPage.startsWith('/index')) intervalId = setInterval(NextImageIndex, 5000);
+      if(currentPage === '/') intervalId = setInterval(NextImageIndex, 3000);
+      else if(currentPage.startsWith('/gallery')) intervalId = setInterval(NextImageGallery, 3000);
+      else if(currentPage.startsWith('/index')) intervalId = setInterval(NextImageIndex, 3000);
+      element_play_button.style.display = 'none';
+      element_pause_button.style.display = 'block';
+
 
     }
     else 
     {
       clearInterval(intervalId);
+      element_play_button.style.display = 'block';
+      element_pause_button.style.display = 'none';
     }
 
 }
@@ -211,14 +219,6 @@ document.addEventListener('keydown', function(event) {
   } else if(event.code === 'Escape') {
     if(fullImgBox.style.display === 'flex')
     CloseImgBox();
-  } else if(event.code === 'Space') {
-
-
-    defilement_image = !defilement_image;
-  
-    defilerImages();
-    
-    
   }
 
 });

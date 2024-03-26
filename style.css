@@ -222,6 +222,23 @@ footer {
   cursor: pointer;
 }
 
+.full-img span#play_button {
+  top: 6%;
+  right: 7%;
+  cursor: pointer;
+}
+
+.full-img span#pause_button {
+  top: 6%;
+  right: 7%;
+  cursor: pointer;
+  display: none;
+}
+
+.full-img span#play_button, .full-img span#pause_button {
+  width: 3rem;
+}
+
 /* -------------- ACCUEIL -----------------------*/
 main ul {
   list-style: none;
