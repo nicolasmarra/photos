@@ -109,6 +109,9 @@ function OnMenu() {
     open_menu.classList.remove('open')
     open_menu.classList.add('close')
   }
+
+  
+  
 }
 
 
@@ -383,5 +386,11 @@ function navigation()
 }
 
 document.addEventListener('DOMContentLoaded', AddPhotos);
+
+window.addEventListener('resize', function() {
+  if (window.innerWidth >= 1024) 
+    document.querySelector('nav').style.display = 'flex'
+
+});
 
 //document.addEventListener('DOMContentLoaded', navigation);
